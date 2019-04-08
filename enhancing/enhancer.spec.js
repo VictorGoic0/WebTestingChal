@@ -24,6 +24,16 @@ test("Should return an item with the durability restored to 100.", function() {
     enhancement: item1.enhancement,
     durability: 100
   });
+  expect(enhancer.repair(item2)).toEqual({
+    name: item2.name,
+    enhancement: item2.enhancement,
+    durability: 100
+  });
+  expect(enhancer.repair(item3)).toEqual({
+    name: item3.name,
+    enhancement: item3.enhancement,
+    durability: 100
+  });
 });
 
 test("Should return an item with the enhancementt 1 point higher, unless it is 20", function() {
@@ -41,5 +51,23 @@ test("Should return an item with the enhancementt 1 point higher, unless it is 2
     name: item3.name,
     enhancement: 20,
     durability: item3.durability
+  });
+});
+
+test("Should return an item with durability decreased by 5 if enhancement is lower than 15, else it decreases by 10. Should return enhancement decreased by 1 if it was greater than 16", function() {
+  expect(enhancer.fail(item1)).toEqual({
+    name: item1.name,
+    enhancement: item1.enhancement,
+    durability: 45
+  });
+  expect(enhancer.fail(item2)).toEqual({
+    name: item2.name,
+    enhancement: item2.enhancement,
+    durability: 65
+  });
+  expect(enhancer.fail(item3)).toEqual({
+    name: item3.name,
+    enhancement: 19,
+    durability: 90
   });
 });
