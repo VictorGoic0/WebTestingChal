@@ -71,3 +71,18 @@ test("Should return an item with durability decreased by 5 if enhancement is low
     durability: 90
   });
 });
+
+test("Should return an item with the name modified to contain enhancement level, unless level was 0", function() {
+  expect(enhancer.get(item1)).toEqual({
+    ...item1,
+    name: "[+12] Iron Sword"
+  });
+  expect(enhancer.get(item2)).toEqual({
+    ...item2,
+    name: "[+4] Golden Scythe"
+  });
+  expect(enhancer.get(item3)).toEqual({
+    ...item3,
+    name: "[+20] Excalibur"
+  });
+});
