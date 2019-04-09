@@ -1,0 +1,14 @@
+{
+  "name": "webtesting-i-challenge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": "https://github.com/VictorGoic0/webtesting-i-challenge.git",
+  "author": "VictorGoic0 <vgoico000@citymail.cuny.edu>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+}
